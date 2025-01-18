@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSE - C</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id = "root"></div>
+    <p id = "paragraph">This is a Paragraph</p>
+    <button id = "btn">Click Me</button>
+
+    <script type="text/babel">
+        function HelloWorld(){
+            const paragraph = document.getElementById("paragraph");
+            const button = document.getElementById("btn");
+            function ChangeText(){
+                return "Welcome All";
+            }
+            function ClickEvent(){
+                paragraph.textContent = ChangeText();
+                button.style.backgroundColor = "Red";
+
+            }
+            button.addEventListener("click",ClickEvent);      
+            return <h1>"Hello World"</h1>;      
+        }
+        const {createRoot} = ReactDOM
+        const root = createRoot(document.getElementById("root"));
+        root.render(<HelloWorld/>);
+
+    </script>
+    
+
+</body>
+</html>
